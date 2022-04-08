@@ -1,0 +1,30 @@
+.layar {
+    padding: 40px;
+    background-color: rgb(252, 200, 88);
+    text-align: right;
+    height: 120px;
+    font-family: 'Jetbrains Mono' !important;
+    font-size: 22px;
+    border-radius:20px;
+}
+
+button {
+    height: 60px;
+    width: 100%;
+    margin: 2px;
+    font-size: 1.2em;
+    border-style: none;
+    color: #000000;
+    border: solid #ffffff;
+}
+
+button:hover {
+    color: rgb(255, 255, 255);
+    background-color: rgb(175, 174, 174);
+    cursor: pointer;
+    border: 2px solid white;
+}
+
+button:active {
+    background-color: rgb(255, 255, 255);
+}
