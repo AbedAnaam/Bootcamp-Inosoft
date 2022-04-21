@@ -13,6 +13,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/{any}', function () {
     return view('welcome');
+})->where('any', '.*');
+
+Route::get('/to-do', function ()
+{
+    return view('viewComponent');
+});
+
+Route::get('/cart',function ()
+{
+    return view('cartBelanja');
 });
