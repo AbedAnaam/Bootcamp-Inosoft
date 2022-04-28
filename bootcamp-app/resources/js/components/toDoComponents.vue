@@ -9,16 +9,18 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex'
 export default ({
     data(){
         return {
             list: [
                 {
-                    title : "coding with vue.js"
+                    title : "Est distinctio nostrum sit atque"
                 },
                 {
-                    title : "study vue component and atomic design"
+                    title : "Consequatur ea atque laborum"
+                },
+                {
+                    title : "Delectus beatae a et qui sit"
                 },
             ],
             input: ""

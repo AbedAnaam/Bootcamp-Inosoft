@@ -1,9 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import Welcome from '../components/Welcome'
 
 Vue.use(VueRouter)
-
-import Welcome from '../components/Welcome'
 
 const routes = [
     {
@@ -18,8 +17,18 @@ const routes = [
     },
     {
         path: '/product',
-        name: 'Product',
+        name: 'product',
         component: () => import(/* webpackChunkName: "product" */ '../components/Product.vue'),
+        // meta: { login: true }
+    },
+    {
+        path: '/cart',
+        name: 'cart',
+        component: () => import(/* webpackChunkName: "cart" */ '../components/Cart.vue'),
+    },
+    {
+        path: '*',
+        redirect: '/'
     }
 ]
 

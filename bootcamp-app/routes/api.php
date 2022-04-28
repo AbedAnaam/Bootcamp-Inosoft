@@ -3,6 +3,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\TodoController;
+use App\Http\Controllers\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,5 +21,21 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('get_product', [ProductController::class], 'getProductList');
+Route::get('get_product', [ProductController::class, 'getProductList']);
 Route::post('add_product', [ProductController::class, 'addProductList']);
+
+Route::get('get_todo', [TodoController::class, 'getTodoList']);
+Route::post('add_todo', [TodoController::class, 'addTodo']);
+
+Route::group([
+    'prefix' => 'auth'
+], function() {
+    Route::post('login', [AuthController::class, 'login']);
+    Route::group([
+        'middleware' => 'auth:api'
+    ], function(){
+        Route::post('logout', [AuthController::class, 'logout']);
+        Route::post('refresh', [AuthController::class, 'refresh']);
+        Route::get('data', [AuthController::class, 'data']);
+    });
+});

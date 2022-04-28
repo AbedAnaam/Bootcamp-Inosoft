@@ -21,11 +21,11 @@
     <body class="antialiased">
 
         <div id="app">
-            {{-- <example-component></example-component> --}}
-            <router-link to="/"> Welcome </router-link>
+            <example-component></example-component>
+            {{-- <router-link to="/"> Welcome </router-link>
             <router-link to="/todo"> ToDo </router-link>
             <br>
-            <to-do></to-do>
+            <to-do></to-do> --}}
         </div>
         <router-view />
         <script src="{{ mix('js/app.js') }}" type="text/javascript"></script>

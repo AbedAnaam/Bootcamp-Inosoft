@@ -165,6 +165,10 @@ return [
         // tambahkan mongodb service provider
         Jenssegers\Mongodb\MongodbServiceProvider::class,
 
+        // add tmon jwt auth
+        // Tymon\JWTAuth\Providers\LaravelServiceProvider::class,
+        'Tymon\JWTAuth\Providers\LaravelServiceProvider',
+
         /*
          * Package Service Providers...
          */
