@@ -26,10 +26,10 @@ const routes = [
         name: 'cart',
         component: () => import(/* webpackChunkName: "cart" */ '../components/Cart.vue'),
     },
-    {
-        path: '*',
-        redirect: '/'
-    }
+    // {
+    //     path: '*',
+    //     redirect: '/'
+    // }
 ]
 
 const router = new VueRouter ({

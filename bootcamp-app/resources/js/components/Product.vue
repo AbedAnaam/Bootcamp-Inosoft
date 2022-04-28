@@ -16,7 +16,7 @@
                     <td>{{ product.name }}</td>
                     <td>{{ product.description }}</td>
                     <td>{{ product.stock }}</td>
-                    <td>{{ product.price }}</td>
+                    <td>Rp. {{ product.price }}</td>
                     <td>
                         <button class="btn btn-primary btn-sm" type="button" @click="addCart">
                             Add to Cart
@@ -29,15 +29,14 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
-import { mapActions } from 'vuex';
+import { mapGetters, mapActions } from 'vuex';
 
 export default {
     computed: {
         // this.$store.getters.products,
         ...mapGetters({
             'products': 'products',
-            'cartItems' : 'cartItems',
+            'cartItems' : 'cart/cartItems',
         })
     },
     created() {
@@ -51,7 +50,7 @@ export default {
     },
     methods: {
         ...mapActions({
-            add: 'add'
+            add: 'cart/add'
         }),
         addCart() {
             // alert('addToCart')

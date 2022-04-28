@@ -27,15 +27,14 @@ Route::post('add_product', [ProductController::class, 'addProductList']);
 Route::get('get_todo', [TodoController::class, 'getTodoList']);
 Route::post('add_todo', [TodoController::class, 'addTodo']);
 
-Route::group([
-    'prefix' => 'auth'
-], function() {
+Route::group([ 'prefix' => 'auth'], function() {
     Route::post('login', [AuthController::class, 'login']);
-    Route::group([
-        'middleware' => 'auth:api'
-    ], function(){
+    Route::get('refresh', [AuthController::class, 'refresh']);
+    Route::post('register', [AuthController::class, 'register']);
+
+    Route::group([ 'middleware' => 'auth:api' ], function(){
         Route::post('logout', [AuthController::class, 'logout']);
-        Route::post('refresh', [AuthController::class, 'refresh']);
-        Route::get('data', [AuthController::class, 'data']);
+
+        Route::get('user', [AuthController::class, 'user']);
     });
 });

@@ -49,11 +49,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 
-
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   computed: _objectSpread({}, (0,vuex__WEBPACK_IMPORTED_MODULE_0__.mapGetters)({
     'products': 'products',
-    'cartItems': 'cartItems'
+    'cartItems': 'cart/cartItems'
   })),
   created: function created() {
     this.$store.dispatch('getProduct').then(function (response) {
@@ -63,7 +62,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     });
   },
   methods: _objectSpread(_objectSpread({}, (0,vuex__WEBPACK_IMPORTED_MODULE_0__.mapActions)({
-    add: 'add'
+    add: 'cart/add'
   })), {}, {
     addCart: function addCart() {
       // alert('addToCart')
@@ -175,7 +174,7 @@ var render = function () {
             _vm._v(" "),
             _c("td", [_vm._v(_vm._s(product.stock))]),
             _vm._v(" "),
-            _c("td", [_vm._v(_vm._s(product.price))]),
+            _c("td", [_vm._v("Rp. " + _vm._s(product.price))]),
             _vm._v(" "),
             _c("td", [
               _c(
