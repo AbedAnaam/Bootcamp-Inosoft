@@ -11,7 +11,7 @@ use Laravel\Sanctum\HasApiTokens;
 class User extends Authenticatable implements JWTSubject
 {
     protected $connection = 'mongodb';
-    protected $collection = 'user';
+    protected $collection = 'users';
 
     use HasApiTokens, HasFactory, Notifiable;
 
